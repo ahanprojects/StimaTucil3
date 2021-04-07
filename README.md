@@ -24,7 +24,7 @@ Python 3 or later
 1. Buka _command crompt_
 2. Change directory ke folder `src`
 3. Jalankan perintah `python main.py'
-4. Pada browser anda, buka laman `localhost:5000`
+4. Pada browser anda, buka laman `localhost:5000`, *sangat dianjurkan untuk melakukan clear cache pada browser terlebih dahulu*  
 5. Pilih file yang akan divisualisasikan kedalam peta _Google Maps_, pastikan format file input sudah benar
 6. Pilih simpul awal
 7. Pilih simpul akhir
