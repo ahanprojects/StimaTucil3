@@ -108,25 +108,30 @@ function degToRad(angle) {
   return (angle * Math.PI) / 180;
 }
 
+function calculateDistance(node1, node2) {
+  let lng1 = node1.position.lng;
+  let lng2 = node2.position.lng;
+  let lat1 = node1.position.lat;
+  let lat2 = node2.position.lat;
+  
+  let lngDiff = lng2 - lng1;
+  let latDiff = lat2 - lat1;
+  
+  let dist = Math.sqrt((lngDiff * 111000) ** 2 + (latDiff * 111000) ** 2);
+  
+  return dist;
+  }
+
 function calculateWeight(node1, node2) {
-  let lng1 = degToRad(node1.position.lng);
-  let lng2 = degToRad(node2.position.lng);
-  let lat1 = degToRad(node1.position.lat);
-  let lat2 = degToRad(node2.position.lat);
+  let lng1 = node1.position.lng;
+  let lng2 = node2.position.lng;
+  let lat1 = node1.position.lat;
+  let lat2 = node2.position.lat;
 
   let lngDiff = lng2 - lng1;
   let latDiff = lat2 - lat1;
 
-  let dist =
-    2 *
-    6371 *
-    1000 *
-    Math.asin(
-      Math.sqrt(
-        Math.pow(Math.sin(latDiff / 2), 2) +
-          Math.pow(Math.sin(lngDiff / 2), 2) * Math.cos(lat1) * Math.cos(lat2)
-      )
-    );
+  let dist = Math.sqrt(latDiff * latDiff + lngDiff * lngDiff);
 
   return dist;
 }
@@ -135,6 +140,7 @@ function calculateWeight(node1, node2) {
 async function getPath(start, end) {
   removePathLines();
   state.info.close();
+  state.path = [];
 
   const res = await fetch("http://localhost:5000/compute-path", {
     method: "POST",
@@ -158,12 +164,12 @@ async function getPath(start, end) {
       <td>${state.path[i].name} - ${state.path[i + 1].name}<td>
       <td>${
         Math.round(
-          calculateWeight(
+          calculateDistance(
             getNodeByName(state.path[i].name),
             getNodeByName(state.path[i + 1].name)
           ) * 1000
         ) / 1000
-      }<td>
+      } m<td>
     <tr/>`;
     drawPathLine(
       getNodeByName(state.path[i].name),
@@ -249,7 +255,18 @@ function removeGraphLines() {
 }
 
 function getDistance() {
-  return state.path[state.path.length - 1].weight;
+  let sum = 0;
+  for (i = 0; i < state.path.length - 1; i++) {
+    sum +=
+      Math.round(
+        calculateDistance(
+          getNodeByName(state.path[i].name),
+          getNodeByName(state.path[i + 1].name)
+        ) * 1000
+      ) / 1000;
+  }
+
+  return sum;
 }
 
 function initMap() {
