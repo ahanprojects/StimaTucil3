@@ -31,7 +31,7 @@ Python 3 or later
 
 ## Lain-Lain
 
-### 1. Format file input
+### 1. Format file input  
 Format file input terdiri dari 4 bagian, yaitu <br/>
 1. Baris pertama merupakan jumlah simpul berupa bilangan bulat
 2. Koordinat dan nama simpul sebanyak jumlah simpul, ketiga elemen dipisahkan oleh spasi
@@ -53,13 +53,13 @@ total line: 8
 
 ### 2. Error
 
-* **Tidak menampilkan rute terpendek dan jarak antar 2 simpul**
+* **Tidak menampilkan rute terpendek dan jarak antar 2 simpul**  
 Kemungkinan hal ini dapat terjadi karena program dibuka di `127.0.0.1:5000`, **PASTIKAN** dibuka pada `localhost:5000`
 
 * **Google maps tidak menampilkan peta**  
 Lakukan reload page pada browser beberapa kali.  
 
-* **Clear Cache**
+* **Clear Cache**  
 Apabila error masih terjadi setelah memastikan solusi dari error sebelumnya, lakukan _clear cache_ pada browser anda
 
 ## Identitas
