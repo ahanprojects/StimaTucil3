@@ -249,7 +249,7 @@ function removeGraphLines() {
 }
 
 function getDistance() {
-  return state.path.reduce((a, b) => a + b.weight, 0);
+  return state.path[state.path.length - 1].weight;
 }
 
 function initMap() {
