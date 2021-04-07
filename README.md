@@ -59,6 +59,9 @@ total line: 8
 
 Kemungkinan hal ini dapat terjadi karena program dibuka di `127.0.0.1:5000`, **PASTIKAN** dibuka pada `localhost:5000`
 
+* **Google maps tidak menampilkan peta**  
+Lakukan reload page pada browser beberapa kali.  
+
 * **Clear Cache**
 
 Apabila error masih terjadi setelah memastikan solusi dari error sebelumnya, lakukan _clear cache_ pada browser anda
