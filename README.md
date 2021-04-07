@@ -32,9 +32,7 @@ Python 3 or later
 ## Lain-Lain
 
 ### 1. Format file input
-
 Format file input terdiri dari 4 bagian, yaitu <br/>
-
 1. Baris pertama merupakan jumlah simpul berupa bilangan bulat
 2. Koordinat dan nama simpul sebanyak jumlah simpul, ketiga elemen dipisahkan oleh spasi
 3. Matriks ketetanggaan boolean antar simpul (1 apabila bertetangga, 0 apabila tidak)
