@@ -104,10 +104,6 @@ function getNodeByName(name) {
   return state.coords.filter((node) => node.name == name)[0];
 }
 
-function degToRad(angle) {
-  return (angle * Math.PI) / 180;
-}
-
 function calculateDistance(node1, node2) {
   let lng1 = node1.position.lng;
   let lng2 = node2.position.lng;
