@@ -5,6 +5,8 @@
 ## Deskripsi
 
 7071 Pathfinding merupakan sebuah program pencarian jalur terpendek dari 2 tempat yang ada di map yang mengaplikasikan 2 materi yang berhubungan yaitu **Algoritma A\* (A star)** dan **Graf**.
+![image](https://user-images.githubusercontent.com/68496198/161451588-22257f7c-636a-4c4a-a069-0cc020232829.png)
+
 
 ## Requirement
 
